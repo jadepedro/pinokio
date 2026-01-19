@@ -1776,7 +1776,7 @@ const attach = (event, webContents) => {
           titleBarStyle : "hidden",
           titleBarOverlay : titleBarOverlay(colors),
           webPreferences: {
-            session: session.fromPartition('temp-window-' + Date.now()),
+            session: session.defaultSession,
             webSecurity: false,
             nativeWindowOpen: true,
             contextIsolation: false,
@@ -1802,7 +1802,7 @@ const attach = (event, webContents) => {
               titleBarStyle : "hidden",
               titleBarOverlay : titleBarOverlay(colors),
               webPreferences: {
-                session: session.fromPartition('temp-window-' + Date.now()),
+                session: session.defaultSession,
                 webSecurity: false,
                 nativeWindowOpen: true,
                 contextIsolation: false,
@@ -1912,7 +1912,7 @@ const createWindow = (port) => {
     height: mainWindowState.height,
     minWidth: 190,
     webPreferences: {
-      session: session.fromPartition('temp-window-' + Date.now()),
+      session: session.defaultSession,
       webSecurity: false,
       nativeWindowOpen: true,
       contextIsolation: false,
@@ -1981,7 +1981,7 @@ const loadNewWindow = (url, port) => {
     height: winState.height,
     minWidth: 190,
     webPreferences: {
-      session: session.fromPartition('temp-window-' + Date.now()),
+      session: session.defaultSession,
       webSecurity: false,
       nativeWindowOpen: true,
       contextIsolation: false,
@@ -2090,7 +2090,7 @@ if (!gotTheLock) {
 //        alwaysOnTop: true,
         frame: false,
         webPreferences: {
-          session: session.fromPartition('temp-window-' + Date.now()),
+          session: session.defaultSession,
           webSecurity: false,
           nativeWindowOpen: true,
           contextIsolation: false,
