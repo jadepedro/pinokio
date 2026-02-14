@@ -1,6 +1,12 @@
 const Store = require('electron-store');
+const os = require('os');
+const path = require('path');
 const packagejson = require("./package.json")
-const store = new Store();
+const store = new Store({
+  defaults: {
+    home: path.resolve(os.homedir(), 'pinokio')
+  }
+});
 module.exports = {
   newsfeed: (gitRemote) => {
     return `https://pinokiocomputer.github.io/home/item?uri=${gitRemote}&display=feed`
